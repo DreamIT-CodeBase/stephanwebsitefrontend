@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/images/*.{png,jpg,gif,svg}", "/css/*", "/*.{css,js,png,jpg,svg,ico}", "/*.html"]
+  },
+  "routes": [
+    {
+      "route": "/privacy-policy",
+      "serve": "/privacy-policy.html",
+      "statusCode": 200
+    }
+  ],
+  "mimeTypes": {
+    ".json": "text/json"
+  }
+}

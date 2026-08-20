@@ -4186,3 +4186,234 @@ button {
   .faq-list summary { padding-top: 22px; padding-bottom: 22px; }
   .faq-list details p { margin-right: 30px; }
 }
+
+/* ══════════════════════════════════════════════
+   PRIVACY POLICY (CLEAN DREAM IT STYLE LAYOUT)
+   ══════════════════════════════════════════════ */
+
+.privacy-page-main {
+  background: #ffffff;
+  padding: clamp(48px, 6vw, 80px) clamp(20px, 4vw, 40px) clamp(64px, 8vw, 100px);
+  min-height: 75vh;
+}
+
+.privacy-container {
+  max-width: 940px;
+  margin: 0 auto;
+  color: #1a202c;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.75;
+}
+
+.privacy-page-title {
+  font-size: clamp(26px, 3.5vw, 34px);
+  font-weight: 800;
+  color: #0d1533;
+  text-align: center;
+  margin: 0 0 36px;
+  letter-spacing: -0.015em;
+}
+
+.privacy-doc-meta {
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.privacy-doc-subtitle {
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: #0d1533;
+  margin: 0 0 6px;
+}
+
+.privacy-effective-date {
+  font-size: 0.95rem;
+  color: #4a5568;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+.privacy-intro {
+  font-size: 1rem;
+  color: #2d3748;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+
+.privacy-intro a,
+.privacy-container a {
+  color: #1c63ff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 150ms ease;
+}
+
+.privacy-intro a:hover,
+.privacy-container a:hover {
+  color: #0d48cb;
+}
+
+.privacy-section {
+  margin-bottom: 34px;
+}
+
+.privacy-heading {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0d1533;
+  margin: 0 0 14px;
+  line-height: 1.4;
+}
+
+.privacy-subheading {
+  font-size: 1.02rem;
+  font-weight: 750;
+  color: #1a2542;
+  margin: 18px 0 8px;
+}
+
+.privacy-text {
+  font-size: 0.98rem;
+  color: #374151;
+  margin: 0 0 14px;
+  line-height: 1.75;
+}
+
+.privacy-text strong {
+  color: #0d1533;
+}
+
+.privacy-list {
+  margin: 0 0 18px;
+  padding-left: 24px;
+  color: #374151;
+}
+
+.privacy-list li {
+  margin-bottom: 8px;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.privacy-list li strong {
+  color: #0d1533;
+}
+
+.privacy-ordered-list {
+  margin: 0 0 18px;
+  padding-left: 24px;
+  color: #374151;
+}
+
+.privacy-ordered-list li {
+  margin-bottom: 8px;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.privacy-ordered-list li strong {
+  color: #0d1533;
+}
+
+/* Callout Box */
+.privacy-note-box {
+  margin: 18px 0 22px;
+  padding: 16px 20px;
+  background: #f8fafc;
+  border-left: 4px solid #1c63ff;
+  border-radius: 6px;
+  color: #374151;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.privacy-note-box.success-border {
+  border-left-color: #18a957;
+  background: #f8fdf9;
+}
+
+.privacy-note-box strong {
+  color: #0d1533;
+}
+
+/* Third-Party Processors Table */
+.privacy-table-container {
+  margin: 20px 0 24px;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.privacy-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.privacy-table th {
+  padding: 12px 16px;
+  background: #f8fafc;
+  color: #0d1533;
+  font-weight: 800;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+}
+
+.privacy-table td {
+  padding: 12px 16px;
+  color: #4a5568;
+  border-bottom: 1px solid #edf2f7;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.privacy-table tr:last-child td {
+  border-bottom: none;
+}
+
+.privacy-table tr:hover td {
+  background: #fafcff;
+}
+
+.privacy-table strong {
+  color: #0d1533;
+}
+
+/* Contact Block */
+.privacy-contact-info {
+  margin-top: 24px;
+  padding: 20px 22px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.privacy-contact-info p {
+  margin: 0 0 8px;
+  color: #374151;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.privacy-contact-info p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-contact-info strong {
+  color: #0d1533;
+}
+
+@media (max-width: 768px) {
+  .privacy-page-main {
+    padding-top: 36px;
+    padding-bottom: 60px;
+  }
+  
+  .privacy-page-title {
+    margin-bottom: 24px;
+  }
+}
+
+
