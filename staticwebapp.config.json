@@ -9,6 +9,11 @@
       "route": "/privacy-policy",
       "serve": "/privacy-policy.html",
       "statusCode": 200
+    },
+    {
+      "route": "/delete-account",
+      "serve": "/delete-account.html",
+      "statusCode": 200
     }
   ],
   "mimeTypes": {
