@@ -1,0 +1,61 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Checkout Cancelled | Social Studying AI">
+    <title>Checkout Cancelled | Social Studying AI</title>
+    <link rel="icon" href="/app_logo.png">
+    <link rel="stylesheet" href="/styles.css?v=3.2">
+    <link rel="stylesheet" href="/subscribe.css?v=1.0">
+  </head>
+  <body class="sub-page">
+    <header class="sub-header">
+      <a class="sub-brand" href="/" aria-label="Social Studying AI Home">
+        <img src="/app_logo.png" alt="Social Studying AI">
+        <span>Social Studying AI</span>
+      </a>
+      <a class="sub-header-link" href="/">Home</a>
+    </header>
+
+    <main class="sub-main">
+      <div class="success-card">
+        <div class="success-icon-wrap" style="background: #fef2f2; color: #dc2626; box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);">
+          <span>✕</span>
+        </div>
+
+        <h1>Checkout Not Completed</h1>
+        <p>
+          Your payment was cancelled and your card was not charged. If you experienced any issue or wish to choose another plan, you can retry at any time.
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 24px;">
+          <a id="btn-retry" href="/subscribe" class="btn-cta-primary" style="text-decoration: none;">
+            <span>Retry Subscription</span>
+          </a>
+          <a href="socialstudy://app" class="btn-cta-primary" style="background: #ffffff; color: #334155; border: 1.5px solid #cbd5e1; text-decoration: none; box-shadow: none;">
+            <span>📱 Return to App</span>
+          </a>
+          <a href="/" style="color: #64748b; font-size: 0.88rem; text-decoration: none; margin-top: 8px;">
+            Back to Website Homepage
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      (function() {
+        const params = new URLSearchParams(window.location.search);
+        const role = params.get('role');
+        const btnRetry = document.getElementById('btn-retry');
+        if (role === 'student') {
+          btnRetry.href = '/student-subscribe';
+          btnRetry.innerHTML = '<span>Retry Student Subscription ($10/mo)</span>';
+        } else {
+          btnRetry.href = '/subscribe';
+          btnRetry.innerHTML = '<span>Retry Admin Workspace Subscription</span>';
+        }
+      })();
+    </script>
+  </body>
+</html>

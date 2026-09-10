@@ -1,10 +1,30 @@
-{
+﻿{
   "$schema": "https://json.schemastore.org/staticwebapp.config.json",
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["/images/*.{png,jpg,gif,svg}", "/css/*", "/*.{css,js,png,jpg,svg,ico}", "/*.html"]
   },
   "routes": [
+    {
+      "route": "/subscribe",
+      "serve": "/subscribe.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/student-subscribe",
+      "serve": "/student-subscribe.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/payment-success",
+      "serve": "/payment-success.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/payment-cancelled",
+      "serve": "/payment-cancelled.html",
+      "statusCode": 200
+    },
     {
       "route": "/privacy-policy",
       "serve": "/privacy-policy.html",

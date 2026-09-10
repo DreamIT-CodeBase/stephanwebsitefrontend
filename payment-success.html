@@ -1,0 +1,111 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Subscription Confirmation | Social Studying AI - Your payment has been verified and your subscription is active."
+    >
+    <title>Subscription Confirmed | Social Studying AI</title>
+    <link rel="icon" href="/app_logo.png">
+    <link rel="stylesheet" href="/styles.css?v=3.2">
+    <link rel="stylesheet" href="/subscribe.css?v=1.0">
+  </head>
+  <body class="sub-page">
+    <header class="sub-header">
+      <a class="sub-brand" href="/" aria-label="Social Studying AI Home">
+        <img src="/app_logo.png" alt="Social Studying AI">
+        <span>Social Studying AI</span>
+      </a>
+      <a class="sub-header-link" href="/">Home</a>
+    </header>
+
+    <main class="sub-main">
+      <div class="success-card">
+        <div class="success-icon-wrap" id="status-icon">
+          <span id="icon-glyph">✓</span>
+        </div>
+
+        <h1 id="status-heading">Payment Confirmed!</h1>
+        <p id="status-message">
+          Your payment was processed and verified by our backend. Your subscription is now fully active.
+        </p>
+
+        <!-- Dynamic Order Summary -->
+        <div class="success-details" id="order-summary" style="display: none;">
+          <div class="detail-row">
+            <span class="detail-label">Account / Email</span>
+            <span class="detail-val" id="val-email">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Plan</span>
+            <span class="detail-val" id="val-plan">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Account Role</span>
+            <span class="detail-val" id="val-role">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Status</span>
+            <span class="detail-val" style="color: #16a34a;" id="val-status">Active</span>
+          </div>
+        </div>
+
+        <!-- Instructions callout box -->
+        <div style="background: #f1f5f9; border-radius: 14px; padding: 18px 20px; text-align: left; margin-bottom: 28px;">
+          <h4 style="margin: 0 0 8px 0; font-size: 0.98rem; color: #0f172a; display: flex; align-items: center; gap: 8px;">
+            <span>📱</span> What to do next:
+          </h4>
+          <ol style="margin: 0; padding-left: 20px; font-size: 0.88rem; color: #475569; line-height: 1.6;">
+            <li>You may now <strong>close this browser window</strong>.</li>
+            <li>Return to the <strong>Social Studying mobile application</strong>.</li>
+            <li>Log in using the <strong>same email address</strong> verified during checkout.</li>
+            <li>Your access has been updated automatically in our backend.</li>
+          </ol>
+        </div>
+
+        <!-- Action buttons -->
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <a id="btn-open-app" href="socialstudy://app/payment-success" class="btn-cta-primary" style="text-decoration: none;">
+            <span>📱 Return to Social Studying App</span>
+          </a>
+          <a href="/" class="btn-cta-primary" style="background: #ffffff; color: #334155; border: 1.5px solid #cbd5e1; text-decoration: none; box-shadow: none;">
+            Return to Website Homepage
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      (async function() {
+        const API_BASE = 'https://ca-api-dev.ambitiouswave-1e406ff3.centralus.azurecontainerapps.io';
+        const params = new URLSearchParams(window.location.search);
+        const sessionId = params.get('session_id');
+        const role = params.get('role');
+
+        const btnOpenApp = document.getElementById('btn-open-app');
+        if (sessionId) {
+          btnOpenApp.href = `socialstudy://app/payment-success?session_id=${encodeURIComponent(sessionId)}&role=${encodeURIComponent(role || '')}`;
+        }
+
+        if (sessionId) {
+          try {
+            const res = await fetch(`${API_BASE}/api/v1/subscriptions/verify-session-public?session_id=${encodeURIComponent(sessionId)}`);
+            const data = await res.json().catch(() => ({}));
+
+            if (res.ok && data.is_active) {
+              document.getElementById('order-summary').style.display = 'block';
+              document.getElementById('val-email').textContent = data.email || 'Verified Account';
+              document.getElementById('val-plan').textContent = (data.plan_id || 'Subscription').replace('_', ' ').toUpperCase();
+              document.getElementById('val-role').textContent = data.role === 'workspace_admin' ? 'Workspace Admin' : 'Student (Self-Study)';
+              document.getElementById('val-status').textContent = 'Active (Verified)';
+            }
+          } catch (e) {
+            console.warn('Session verification notice:', e);
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

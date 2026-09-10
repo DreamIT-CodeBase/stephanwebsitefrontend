@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Student Self-Study Subscription | Social Studying AI - Unlock unlimited AI-grounded questions, personal adaptive learning path, flashcards, and topic mastery."
+    >
+    <title>Student Self-Study Subscription | Social Studying AI</title>
+    <link rel="icon" href="/app_logo.png">
+    <link rel="stylesheet" href="/styles.css?v=3.2">
+    <link rel="stylesheet" href="/subscribe.css?v=1.0">
+    <style>
+      .student-hero {
+        background: linear-gradient(135deg, #065f46 0%, #047857 60%, #10b981 100%);
+        box-shadow: 0 10px 30px rgba(4, 120, 87, 0.25);
+      }
+      .student-plan-highlight {
+        border: 2.5px solid #10b981;
+        background: #f0fdf4;
+        border-radius: 20px;
+        padding: 32px 28px;
+        margin-bottom: 28px;
+        text-align: left;
+      }
+      .student-price-tag {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin: 16px 0;
+      }
+      .student-price-tag .amount {
+        font-size: 3rem;
+        font-weight: 900;
+        color: #065f46;
+      }
+      .student-price-tag .cycle {
+        font-size: 1.1rem;
+        color: #047857;
+        font-weight: 700;
+      }
+      .feature-checklist {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      @media (max-width: 640px) {
+        .feature-checklist {
+          grid-template-columns: 1fr;
+        }
+      }
+      .feature-checklist li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.95rem;
+        color: #1e293b;
+        font-weight: 550;
+      }
+      .feature-checklist li span.check {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #10b981;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        font-weight: 900;
+      }
+    </style>
+  </head>
+  <body class="sub-page">
+    <header class="sub-header">
+      <a class="sub-brand" href="/" aria-label="Social Studying AI Home">
+        <img src="/app_logo.png" alt="Social Studying AI">
+        <span>Social Studying AI</span>
+      </a>
+      <a class="sub-header-link" href="/">← Back to Home</a>
+    </header>
+
+    <main class="sub-main">
+      <section class="sub-hero-card student-hero">
+        <span class="sub-badge" style="color: #a7f3d0; background: rgba(255, 255, 255, 0.2);">Student Self-Study Learning</span>
+        <h1>Upgrade Your Self-Study Access</h1>
+        <p>Keep the momentum going. Continue generating AI practice questions, revision sessions, and flashcards from your personal study materials.</p>
+      </section>
+
+      <div class="sub-form-card">
+        <div id="student-alert" class="alert-box" role="alert"></div>
+
+        <div class="student-plan-highlight">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.85rem; font-weight: 750; text-transform: uppercase; color: #047857; letter-spacing: 0.05em;">Recurring Monthly Membership</span>
+            <span style="background: #10b981; color: #ffffff; padding: 4px 12px; border-radius: 9999px; font-size: 0.75rem; font-weight: 800;">AUTO-PAY ENABLED</span>
+          </div>
+
+          <div class="student-price-tag">
+            <span class="amount">$10</span>
+            <span class="cycle">/ month (cancel anytime)</span>
+          </div>
+
+          <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.5;">
+            Unlimited self-study access across all your uploaded documents and textbooks. Powered by real-time adaptive AI that identifies your weak topics and adjusts question difficulty to your mastery.
+          </p>
+
+          <ul class="feature-checklist">
+            <li><span class="check">✓</span> Unlimited AI adaptive questions</li>
+            <li><span class="check">✓</span> Automatic spaced-repetition flashcards</li>
+            <li><span class="check">✓</span> Personal document uploading &amp; OCR</li>
+            <li><span class="check">✓</span> Mastery analytics &amp; streak tracking</li>
+            <li><span class="check">✓</span> Instant explanations &amp; hints</li>
+            <li><span class="check">✓</span> Mobile app synchronization</li>
+          </ul>
+        </div>
+
+        <form id="student-checkout-form" novalidate>
+          <div class="field-group">
+            <label for="student-email">Your Account Email Address <span class="req">*</span></label>
+            <input type="email" id="student-email" class="field-input" placeholder="student@example.com" required autocomplete="email">
+            <div class="field-helper" id="student-email-helper">
+              Must match the email used in your Social Studying mobile application account.
+            </div>
+          </div>
+
+          <button type="submit" id="btn-student-pay" class="btn-cta-primary" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+            <span id="btn-student-text">Proceed to Stripe Payment ($10/mo)</span>
+            <span id="btn-student-spinner" class="spinner" style="display: none;"></span>
+          </button>
+
+          <div class="security-footer">
+            <span>🔒 256-bit Encrypted</span>
+            <span>⚡ Powered by Stripe Billing</span>
+            <span>🛡️ Recurring Monthly Auto-pay</span>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="/student-subscribe.js?v=1.0"></script>
+  </body>
+</html>

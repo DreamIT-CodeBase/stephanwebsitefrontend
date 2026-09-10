@@ -1,0 +1,202 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Admin Workspace Subscription | Social Studying AI - Set up your school or team workspace with AI-powered adaptive study tools, taxonomy curation, and student analytics."
+    >
+    <title>Admin Workspace Subscription | Social Studying AI</title>
+    <link rel="icon" href="/app_logo.png">
+    <link rel="stylesheet" href="/styles.css?v=3.2">
+    <link rel="stylesheet" href="/subscribe.css?v=1.0">
+  </head>
+  <body class="sub-page">
+    <header class="sub-header">
+      <a class="sub-brand" href="/" aria-label="Social Studying AI Home">
+        <img src="/app_logo.png" alt="Social Studying AI">
+        <span>Social Studying AI</span>
+      </a>
+      <a class="sub-header-link" href="/">← Back to Home</a>
+    </header>
+
+    <main class="sub-main">
+      <section class="sub-hero-card">
+        <span class="sub-badge">Admin Workspace Onboarding</span>
+        <h1>Activate Your Admin Workspace</h1>
+        <p>Complete your registration, verify your administrator email, and select your workspace plan to unlock institutional AI study tools.</p>
+      </section>
+
+      <!-- Step Indicator -->
+      <nav class="steps-nav" aria-label="Subscription progress">
+        <div class="step-item active" id="step-nav-1">
+          <span class="step-dot">1</span>
+          <span>Admin Details</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" id="step-nav-2">
+          <span class="step-dot">2</span>
+          <span>Email Verification</span>
+        </div>
+        <div class="step-line"></div>
+        <div class="step-item" id="step-nav-3">
+          <span class="step-dot">3</span>
+          <span>Stripe Payment</span>
+        </div>
+      </nav>
+
+      <!-- Main Form Card -->
+      <div class="sub-form-card">
+        <div id="form-alert" class="alert-box" role="alert"></div>
+
+        <form id="admin-subscribe-form" novalidate>
+          <h2 class="form-section-title">
+            <span>🏛️</span> Organization &amp; Admin Information
+          </h2>
+
+          <div class="form-grid-2">
+            <div class="field-group">
+              <label for="admin-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="admin-name" class="field-input" placeholder="e.g. Dr. Sarah Jenkins" required autocomplete="name">
+            </div>
+
+            <div class="field-group">
+              <label for="admin-org">School or Organization <span class="req">*</span></label>
+              <input type="text" id="admin-org" class="field-input" placeholder="e.g. Oakridge Academy" required autocomplete="organization">
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="field-group">
+              <label for="admin-email">Administrator Email <span class="req">*</span></label>
+              <div class="field-input-wrap">
+                <input type="email" id="admin-email" class="field-input" placeholder="admin@school.edu" required autocomplete="email">
+                <span id="email-verified-badge" class="verified-icon" style="display: none;" title="Email verified">✓</span>
+              </div>
+              <div class="field-helper" id="email-helper">A 6-digit one-time code will be sent to this address.</div>
+            </div>
+
+            <div class="field-group">
+              <label for="admin-phone">Phone Number <span class="req">*</span></label>
+              <input type="tel" id="admin-phone" class="field-input" placeholder="+1 (555) 000-0000" required autocomplete="tel">
+              <div class="field-helper">Include country code for priority account recovery.</div>
+            </div>
+          </div>
+
+          <!-- Plan Selection -->
+          <h2 class="form-section-title" style="margin-top: 28px;">
+            <span>💳</span> Select Workspace Plan
+          </h2>
+
+          <div class="plans-grid">
+            <!-- Monthly -->
+            <label class="plan-card is-selected" for="plan-monthly">
+              <input type="radio" name="plan" id="plan-monthly" value="monthly" class="plan-radio" checked>
+              <div class="plan-title">Monthly Workspace</div>
+              <div class="plan-price">
+                <span class="plan-price-amount">$19</span>
+                <span class="plan-price-cycle">/ month</span>
+              </div>
+              <ul class="plan-features">
+                <li>Full Workspace Admin rights</li>
+                <li>Document ingestion &amp; taxonomy</li>
+                <li>Unlimited questions &amp; flashcards</li>
+                <li>Student analytics &amp; mastery rollups</li>
+                <li>Auto-renewing recurring billing</li>
+              </ul>
+            </label>
+
+            <!-- Annual (Best Value) -->
+            <label class="plan-card" for="plan-annual">
+              <span class="plan-badge">Save 17%</span>
+              <input type="radio" name="plan" id="plan-annual" value="annual" class="plan-radio">
+              <div class="plan-title">Annual Workspace</div>
+              <div class="plan-price">
+                <span class="plan-price-amount">$190</span>
+                <span class="plan-price-cycle">/ year</span>
+              </div>
+              <ul class="plan-features">
+                <li>2 Months Free ($15.83 / mo)</li>
+                <li>Full Workspace Admin rights</li>
+                <li>Priority document indexing</li>
+                <li>Full student rosters &amp; groups</li>
+                <li>Dedicated support channel</li>
+              </ul>
+            </label>
+
+            <!-- Pro -->
+            <label class="plan-card" for="plan-pro">
+              <input type="radio" name="plan" id="plan-pro" value="pro" class="plan-radio">
+              <div class="plan-title">Pro Workspace</div>
+              <div class="plan-price">
+                <span class="plan-price-amount">$29</span>
+                <span class="plan-price-cycle">/ month</span>
+              </div>
+              <ul class="plan-features">
+                <li>Everything in Monthly Workspace</li>
+                <li>Multi-workspace support</li>
+                <li>Advanced AI tuning &amp; custom prompts</li>
+                <li>Priority queue for heavy documents</li>
+                <li>Exportable grading reports</li>
+              </ul>
+            </label>
+          </div>
+
+          <!-- Action Button -->
+          <button type="submit" id="btn-submit-action" class="btn-cta-primary">
+            <span id="btn-text">Verify Email &amp; Continue</span>
+            <span id="btn-spinner" class="spinner" style="display: none;"></span>
+          </button>
+
+          <div class="security-footer">
+            <span>🔒 256-bit Encrypted</span>
+            <span>⚡ Powered by Stripe Billing</span>
+            <span>🛡️ Cancel anytime</span>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- OTP Verification Modal -->
+    <div id="otp-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-otp-title">
+      <div class="modal-box">
+        <div class="modal-icon-circle">✉️</div>
+        <h3 id="modal-otp-title" class="modal-title">Verify Your Email</h3>
+        <p class="modal-subtitle">
+          We sent a 6-digit verification code to <strong id="modal-target-email">your email</strong>. Please enter it below.
+        </p>
+
+        <div id="modal-alert" class="alert-box" role="alert"></div>
+
+        <form id="otp-form">
+          <div class="otp-inputs-wrap">
+            <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*" autofocus autocomplete="one-time-code">
+            <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*">
+            <input type="text" maxlength="1" class="otp-digit" inputmode="numeric" pattern="[0-9]*">
+          </div>
+
+          <div class="otp-timer">
+            Expires in <strong id="countdown-timer">10:00</strong>
+          </div>
+
+          <button type="submit" id="btn-verify-otp" class="btn-cta-primary" style="margin-bottom: 16px;">
+            <span id="btn-verify-text">Confirm &amp; Proceed</span>
+            <span id="btn-verify-spinner" class="spinner" style="display: none;"></span>
+          </button>
+
+          <div>
+            <button type="button" id="btn-resend-otp" class="otp-resend-btn" disabled>
+              Resend code in <span id="resend-cooldown">30</span>s
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="/subscribe.js?v=1.0"></script>
+  </body>
+</html>
