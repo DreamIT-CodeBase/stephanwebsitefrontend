@@ -277,12 +277,12 @@ function closeModal() {
   }
 }
 
-// Bind click event to Book a Demo links and Get Started in header
-const bookDemoLinks = document.querySelectorAll('a');
-bookDemoLinks.forEach(link => {
-  const text = link.textContent.toLowerCase().trim();
-  if (text.includes("book a demo") || (link.closest('.site-header') && text.includes("get started"))) {
-    link.addEventListener("click", openModal);
+// Bind click event to Book a Demo links, buttons, and elements with data-open-modal
+const bookDemoElements = document.querySelectorAll('a, button, [data-open-modal]');
+bookDemoElements.forEach(el => {
+  const text = el.textContent.toLowerCase().trim();
+  if (text.includes("book a demo") || el.hasAttribute('data-open-modal')) {
+    el.addEventListener("click", openModal);
   }
 });
 

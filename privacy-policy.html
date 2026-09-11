@@ -25,7 +25,25 @@
         <a href="/#for-parents">For Parents</a>
         <a href="/#faq">FAQ</a>
       </nav>
-      <a class="header-subscribe" href="/#hero">Get Started</a>
+      <div class="header-cta-group">
+        <button type="button" class="header-demo-btn" data-open-modal>Book a Demo</button>
+        <div class="header-sub-dropdown">
+          <a class="header-subscribe" href="/subscribe">
+            <span>Subscription</span>
+            <svg class="sub-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </a>
+          <div class="header-sub-menu">
+            <a href="/subscribe" class="sub-menu-item">
+              <span class="sub-item-title">Admin Workspace</span>
+              <span class="sub-item-desc">For schools, educators &amp; teams ($99/mo)</span>
+            </a>
+            <a href="/student-subscribe" class="sub-menu-item">
+              <span class="sub-item-title">Student Subscription</span>
+              <span class="sub-item-desc">Unlimited AI practice &amp; self-study ($10/mo)</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main class="privacy-page-main">
@@ -339,14 +357,20 @@
 
       <nav class="footer-links" aria-label="Footer navigation">
         <h3>Explore</h3>
-        <div>
-          <a href="/#hero">Home</a>
-          <a href="/#features">Features</a>
-          <a href="/#for-schools">For Schools</a>
-          <a href="/#for-parents">For Parents</a>
-          <a href="/#faq">FAQ</a>
-          <a href="/privacy-policy" class="is-active" style="color: #1c63ff; font-weight: 800;">Privacy Policy</a>
-          <a href="/delete-account">Delete Account</a>
+        <div class="footer-explore-cols">
+          <div class="footer-col">
+            <a href="/#hero">Home</a>
+            <a href="/#features">Features</a>
+            <a href="/#for-schools">For Schools</a>
+            <a href="/#for-parents">For Parents</a>
+            <a href="/#faq">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <a href="/subscribe">Admin Subscription</a>
+            <a href="/student-subscribe">Student Subscription</a>
+            <a href="/privacy-policy" class="is-active" style="color: #1c63ff; font-weight: 800;">Privacy Policy</a>
+            <a href="/delete-account">Delete Account</a>
+          </div>
         </div>
       </nav>
 
