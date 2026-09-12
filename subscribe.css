@@ -631,3 +631,28 @@
   color: #0f172a;
   font-weight: 700;
 }
+
+
+/* ============================================================
+   Tester Onboarding: Temporarily Put Hold on Pricing and Hide Payment UI
+   (Preserving all underlying form fields and models intact)
+   ============================================================ */
+.plans-grid,
+#step-nav-3,
+.security-footer,
+.plan-section-header,
+.student-plan-highlight,
+.student-price-tag,
+.step-line:last-of-type {
+  display: none !important;
+}
+
+.plans-grid,
+#step-nav-3,
+.steps-nav .step-line:last-of-type,
+.security-footer,
+.plan-section-header,
+.student-plan-highlight,
+.student-price-tag {
+  display: none !important;
+}

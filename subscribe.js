@@ -358,12 +358,9 @@
 
       closeOtpModal();
       updateButtonText();
-      showAlert(formAlert, '✓ Email verified! Click below to proceed to secure Stripe checkout.', 'success');
-
-      // Auto-trigger checkout step smoothly
-      setTimeout(() => {
-        initiateStripeCheckout();
-      }, 500);
+      showAlert(formAlert, '🎉 Email verified! Your tester workspace access has been granted for free. You can now open the app and log in with this email to begin testing.', 'success');
+      btnSubmit.style.display = 'none';
+      // initiateStripeCheckout(); // Temporarily held for tester onboarding
     } catch (err) {
       showAlert(modalAlert, err.message);
     } finally {

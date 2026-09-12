@@ -4541,3 +4541,28 @@ button {
 }
 
 
+
+
+/* ============================================================
+   Tester Onboarding: Temporarily Put Hold on Pricing and Hide Payment UI
+   (Preserving all underlying HTML and endpoints intact)
+   ============================================================ */
+.header-sub-dropdown {
+  display: none !important;
+}
+
+.footer-col a[href="/subscribe"],
+.footer-col a[href="/student-subscribe"] {
+  display: none !important;
+}
+
+.header-sub-dropdown,
+.header-sub-menu,
+.header-cta-group .header-sub-dropdown,
+a.header-subscribe[href="/subscribe"],
+a[href="/subscribe"],
+a[href="/student-subscribe"],
+.footer-col a[href*="subscribe"],
+.footer-explore-cols a[href*="subscribe"] {
+  display: none !important;
+}

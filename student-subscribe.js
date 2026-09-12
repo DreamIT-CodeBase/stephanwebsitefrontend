@@ -53,6 +53,9 @@
       return;
     }
 
+    showAlert('🎉 Beta tester access granted! Open the app and log in with this email to begin testing with full access.', 'success');
+    btnPay.style.display = 'none';
+    return; // Temporarily put hold on pricing for testers; bypass Stripe redirect
     btnPay.disabled = true;
     btnSpinner.style.display = 'inline-block';
     btnText.textContent = 'Redirecting to Stripe Billing...';
